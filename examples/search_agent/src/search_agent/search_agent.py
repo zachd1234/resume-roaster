@@ -42,58 +42,46 @@ class SearchAgent(AbstractAgent):
             query: Query,
             response_handler: ResponseHandler
     ):
-        """Search the internet for information."""
-        # Search for information
-        await response_handler.emit_text_block(
-            "SEARCH", "Searching internet for results..."
-        )
-        # search_results = await self._search_provider.search(query.prompt)
-        search_results: dict = {
-            "results": [],
-            "images": []
-        }
-        if len(search_results["results"]) > 0:
-            # Use response handler to emit JSON to the client
-            await response_handler.emit_json(
-                "SOURCES", {"results": search_results["results"]}
-            )
-        if len(search_results["images"]) > 0:
-            # Use response handler to emit JSON to the client
-            await response_handler.emit_json(
-                "IMAGES", {"images": search_results["images"]}
-            )
 
-        # Process search results
         # Use response handler to create a text stream to stream the final 
-        # response to the client
         final_response_stream = response_handler.create_text_stream(
             "FINAL_RESPONSE"
-            )
-        final_response_str = []
-        async for chunk in self.__process_search_results(query.prompt, search_results["results"]):
+        )
+
+        async for chunk in self.__roast_resume(query.prompt):
             # Use the text stream to emit chunks of the final response to the client
             await final_response_stream.emit_chunk(chunk)
-            final_response_str.append(chunk)
         
-        with open('final_response.txt', 'w') as f:
-            f.write(''.join(final_response_str))
+        await final_response_stream.emit_chunk("\n\nAs a favor to you, I am now giving you a life-line to save your face. Here is the updated resume:\n\n")
+
+        async for chunk in self.__update_resume(query.prompt):
+            # Use the text stream to emit chunks of the final response to the client
+            await final_response_stream.emit_chunk(chunk)
+        
+        # Convert final response to PDF
         # Mark the text stream as complete
         await final_response_stream.complete()
         # Mark the response as complete
         await response_handler.complete()
     
-
-    async def __process_search_results(
+    async def __roast_resume(
             self,
-            prompt: str,
-            search_results: dict
+            resume_text: str,
     ) -> AsyncIterator[str]:
         """Process the search results."""
-        # process_search_results_query = f"Summarise the provided search results and use them to answer the provided prompt. Prompt: {prompt}. Search results: {search_results}"
-        # process_search_results_query = f"Given the following resume, write a roast as if you're reviewing it in a brutal way. Don't hold back. The tone should be funny, savage, colorful, emotional, and fast-paced. Mention and joke about specific elements from the resume. Ensure it is highly personalized to the resumes unique components. Use vivid metaphors, cultural references, and exaggerations to make it more entertaining. Then finish with a 🍗 Roast-o-Meter: X/5 Sizzler: Compare the resume to a cultural moment, viral trend, or funny disaster using vivid language, playful exaggeration, and strong imagery. Limit this to one vivid, punchy sentence. Return output in a paragraph structure. Resume:{prompt}"
+        roast_resume_prompt = f"Given the following resume, write a roast as if you're reviewing it in a brutal way. Don't hold back. The tone should be funny, savage, colorful, emotional, and fast-paced. Mention and joke about specific elements from the resume. Ensure it is highly personalized to the resumes unique components. Use vivid metaphors, cultural references, and exaggerations to make it more entertaining. Then finish with a 🍗 Roast-o-Meter: X/5 Sizzler: Compare the resume to a cultural moment, viral trend, or funny disaster using vivid language, playful exaggeration, and strong imagery. Limit this to one vivid, punchy sentence. Return output in a paragraph structure. Resume:{resume_text}"
+        async for chunk in self._model_provider.query_stream(roast_resume_prompt):
+            yield chunk
+
+
+    async def __update_resume(
+            self,
+            resume_text: str,
+    ) -> AsyncIterator[str]:
+        """Process the search results."""
         with open('/Users/soham/Desktop/Sentient-Agent-Framework-Examples/examples/search_agent/src/search_agent/resume_update_prompt.txt', 'r') as f:
-            process_search_results_query = f.read() + f"\n\nResume: {prompt}"
-        async for chunk in self._model_provider.query_stream(process_search_results_query):
+            update_resume_prompt = f.read() + f"\n\nResume: {resume_text}"
+        async for chunk in self._model_provider.query_stream(update_resume_prompt):
             yield chunk
 
 
