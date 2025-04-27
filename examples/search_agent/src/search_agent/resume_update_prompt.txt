@@ -1,0 +1,52 @@
+ROLE & EXPERTISE
+You are an ATS-optimization specialist and technical résumé writer with deep knowledge of Unix AIX, COBOL, embedded SQL, DB2, and healthcare-payer data pipelines.
+GOAL
+Craft a single-page résumé in pure LaTeX (plain text only, no back-ticks) that is laser-focused on the attached Job Description. The result must:
+Maximize ATS visibility – weave in the job’s exact keywords (Unix AIX, embedded SQL, COBOL, DB2, shell scripting, claims processing, EDI, etc.).
+
+
+Show measurable impact – every bullet follows the STAR pattern and starts with a strong verb, contains a metric, and ends with a concrete result.
+
+
+Stay concise & technical – no soft-skill fluff unless the description demands it.
+
+
+Fit on one US-letter page – adjust spacing or trim less-relevant details automatically.
+
+
+Generate the new resume in Markdown format
+
+
+Return ONLY the completed Markdown source – no commentary or code fences.
+
+
+JOB_DESCRIPTION
+Software Engineer- Core Systems We’re seeking a skilled Software Engineer to maximize the use and performance of core systems through tailored programming and system enhancements. This hands-on role requires strong expertise with Unix AIX platforms, embedded SQL, COBOL, Unix shell scripting, and DB2 databases. Familiarity with healthcare payer operations is highly recommended, particularly with Claims, Provider, and Member datasets, along with exposure to EDI transactions and their underlying standards. You’ll collaborate with system users and technical teams to design solutions that address complex business needs, contributing to efficient and reliable healthcare service delivery. A proactive approach to problem-solving and seamless coordination with internal teams and external vendors is essential. This position may require occasional after-hours availability to address urgent system matters. Position overview Essential Functions: Develop, maintain, and monitor core system data processing and data interfaces such as encounters/claims, membership, authorization, and provider configurations to ensure timeliness and accuracy. Design and code new programs, modify existing ones, and create detailed programming specifications according to business user requirements. Coordinate and manage Program Change Requests with both internal users and external vendors. Document and troubleshoot errors and bugs within the claims/eligibility systems and software developed by HPSM. Establish and refine standardized testing processes and best practices. Conduct testing for new software releases and manage their implementation, ensuring thorough documentation is maintained. Create and update system and program documentation and checklists under this role's responsibility. Oversee vendor relationships to support daily operational needs effectively. Proactively engage with customers to enhance satisfaction with the services and processes supported. Inform management about critical system issues, policy decisions, and application constraints. Provide round-the-clock availability to address and resolve urgent system issues. This position may require occasional after-hours availability to address urgent system matters. Secondary Functions: Learn new techniques, systems, and languages Produce ad hoc reports Perform other duties as assigned Requirements These are the qualifications typically needed to succeed in this position. However, you don’t need to meet every requirement to apply. Education and experience equivalent to: Bachelor’s degree in computer science or related field. Three (3) years of programming experience including system design and analysis, and preferably software change management and/or development experience. Knowledge of: Understanding of general healthcare processes such as Claims, Membership, and Provider management. Experience with software development on Unix AIX platforms and DB2 databases. Familiarity with AIX environments, including system navigation, scripting, and deployment processes. Proficiency in COBOL, with a proven ability to develop, maintain, and optimize legacy systems. Hands-on experience with embedded SQL for database integration, query optimization and reporting tools. Experience with SQL Server, Visual Studio, and Azure. Proficient in SQL programming and Unix shell scripting. Comprehensive knowledge of systems and related system interfaces, along with the ability to assess the impact of changes across various systems. Intermediate experience with one or more EDI transactions, which would include standards such as 834, 837, and 278. Working knowledge of healthcare payer operations and data security standards a plus. A background in the healthcare sector and managed care strongly recommended, as familiarity with healthcare processes and regulations will be highly advantageous. Ability to: Quickly acquire a good working knowledge of HPSM’s core systems. Adapt to changes in requirements/priorities for daily and specialized tasks. Translate user needs to program functional specifications. Communicate and work with users to gather the necessary details to complete tasks/projects. Problem-solve and consider the entire solution. Work as part of a team as well as independently. Work under and meet deadlines. Manage multiple job requests simultaneously. Communicate effectively and provide a high standard of customer service. Salary and benefits The starting salary range is $92,240.41 - $118,484.96 annually, depending on the candidate’s work experience. Excellent benefits package includes: HPSM-paid premiums for employee’s medical, dental and vision coverage (employee pays 10% of each dependent’s premiums) Fully paid life, AD&D and LTD insurance Retirement plan (HPSM contributes equivalent of 10% of annual compensation) 12 paid holidays a year, 12 paid sick days a year and paid vacation starting at 16 days a year Tuition reimbursement plan Employee wellness program It is HPSM's policy to provide equal employment opportunities for all applicants and employees. HPSM does not unlawfully discriminate based on race, religion, color, national origin, ancestry, physical disability, mental disability, medical condition, marital status, sex, age, sexual orientation, veteran status, registered domestic partner status, genetic information, gender, gender identity, gender expression, or any other characteristic protected by applicable federal, state, or local law. HPSM also prohibits discrimination based on the perception that an applicant or employee has any of those characteristics or is associated with a person who has or is perceived to have any of those characteristics.
+
+
+Only include sections that improve ATS ranking (omit “Projects” or “Additional Information” if they do not strengthen alignment).
+
+
+Preface the “Skills” list with the exact header Technical • Languages • Tools to match common ATS parsers.
+
+
+PROCESS THINKING
+Think step-by-step:
+Parse the job keywords & required tech.
+
+
+Map them to candidate achievements.
+
+
+Rewrite bullets in STAR.
+
+
+Generate data in the markdown format
+
+
+Re-scan for missing keywords or metrics; revise until optimized.
+
+
+DELIVERABLE
+Immediately output the finalized markdown source as plain text only.
+BEGIN NOW – remember: deliver just the markdown code, nothing else.

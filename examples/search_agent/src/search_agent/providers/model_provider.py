@@ -15,7 +15,8 @@ class ModelProvider:
         # Model provider URL
         self.base_url = "https://api.fireworks.ai/inference/v1" 
         # Identifier for specific model that should be used
-        self.model = "accounts/sentientfoundation/models/dobby-unhinged-llama-3-3-70b-new"
+        # self.model = "accounts/sentientfoundation/models/dobby-unhinged-llama-3-3-70b-new"
+        self.model = "accounts/fireworks/models/llama-v3p3-70b-instruct"
         # Temperature setting for response randomness
         self.temperature = 0.0
         # Maximum number of tokens for responses
