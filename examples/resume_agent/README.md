@@ -1,5 +1,5 @@
 # Search Agent
-This example demonstrates how to build a simple search agent that uses the [Sentient Agent Framework](https://github.com/sentient-agi/Sentient-Agent-Framework). **The most important part of the example is the `search_agent.py` file, which demonstrates how to subclass the `AbstractAgent` class, implement the `assist` method, and create and serve Sentient Chat events.**
+This example demonstrates how to build a simple search agent that uses the [Sentient Agent Framework](https://github.com/sentient-agi/Sentient-Agent-Framework). **The most important part of the example is the `resume_agent.py` file, which demonstrates how to subclass the `AbstractAgent` class, implement the `assist` method, and create and serve Sentient Chat events.**
 
 ## Running the search agent
 > [!NOTE]
@@ -34,7 +34,7 @@ pip install -r requirements.txt
 
 #### 7. Run the search agent:
 ```
-python3 -m src.search_agent.search_agent
+python3 -m src.resume_agent.resume_agent
 ```
 
 #### 8. Use a tool like [CuRL](https://curl.se/) or [Postman](https://www.postman.com/) to query the server. The agent exposes a single `assist` endpoint:

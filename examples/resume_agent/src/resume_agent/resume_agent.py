@@ -1,8 +1,8 @@
 import logging
 import os
 from dotenv import load_dotenv
-from src.search_agent.providers.model_provider import ModelProvider
-from src.search_agent.providers.search_provider import SearchProvider
+from src.resume_agent.providers.model_provider import ModelProvider
+from src.resume_agent.providers.search_provider import SearchProvider
 from sentient_agent_framework import (
     AbstractAgent,
     DefaultServer,
@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 
-class SearchAgent(AbstractAgent):
+class ResumeAgent(AbstractAgent):
     def __init__(
             self,
             name: str
@@ -125,7 +125,7 @@ BEGIN NOW – remember: deliver just the plain text code, nothing else.
 
 if __name__ == "__main__":
     # Create an instance of a SearchAgent
-    agent = SearchAgent(name="Search Agent")
+    agent = ResumeAgent(name="Resume Agent")
     # Create a server to handle requests to the agent
     server = DefaultServer(agent)
     # Run the server
