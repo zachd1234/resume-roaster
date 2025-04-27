@@ -91,7 +91,7 @@ class SearchAgent(AbstractAgent):
         """Process the search results."""
         # process_search_results_query = f"Summarise the provided search results and use them to answer the provided prompt. Prompt: {prompt}. Search results: {search_results}"
         # process_search_results_query = f"Given the following resume, write a roast as if you're reviewing it in a brutal way. Don't hold back. The tone should be funny, savage, colorful, emotional, and fast-paced. Mention and joke about specific elements from the resume. Ensure it is highly personalized to the resumes unique components. Use vivid metaphors, cultural references, and exaggerations to make it more entertaining. Then finish with a 🍗 Roast-o-Meter: X/5 Sizzler: Compare the resume to a cultural moment, viral trend, or funny disaster using vivid language, playful exaggeration, and strong imagery. Limit this to one vivid, punchy sentence. Return output in a paragraph structure. Resume:{prompt}"
-        with open('/Users/soham/Desktop/Sentient-Agent-Framework-Examples/examples/search_agent/src/search_agent/resume_update_prompt.txt', 'r') as f:
+        with open('resume_update_prompt.txt', 'r') as f:
             process_search_results_query = f.read() + f"\n\nResume: {prompt}"
         async for chunk in self._model_provider.query_stream(process_search_results_query):
             yield chunk
